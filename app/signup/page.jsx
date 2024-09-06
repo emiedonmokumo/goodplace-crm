@@ -77,7 +77,7 @@ const Page = () => {
 
       if (response.ok) {
         console.log(await response.json())
-        router.push('/')
+        router.push('/dashboard')
       }
 
       setCurrentStep(5)
