@@ -5,11 +5,11 @@ export const BioForm = ({ bioForm, setBioForm }) => {
     return (
         <div className='my-5'>
             <div className='pb-5'>
-                <h1 className='text-lg font-bold pb-1 sm:text-sm'>Personal Information</h1>
-                <p className='text-sm font-medium sm:text-xs'>Complete your sign up process and get started with a 1 month free trial</p>
+                <h1 className='text-lg font-bold pb-1'>Personal Information</h1>
+                <p className='text-sm font-medium sm:text-sm'>Complete your sign up process and get started with a 1 month free trial</p>
             </div>
             <div className='flex flex-col space-y-3'>
-                <div className="flex lg:flex-row sm:flex-col lg:space-x-2">
+                <div className="flex lg:flex-row sm:flex-col lg:space-x-2 sm:space-y-5">
                     <div className='flex flex-col w-full'>
                         <label htmlFor="" className='text-sm sm:text-xs pb-1'>First Name</label>
                         <input
@@ -56,7 +56,7 @@ export const BioForm = ({ bioForm, setBioForm }) => {
                         onChange={(e) => setBioForm({ ...bioForm, phone: e.target.value })}
                     />
                 </div>
-                <div className="flex lg:flex-row sm:flex-col lg:space-x-2">
+                <div className="flex lg:flex-row sm:flex-col lg:space-x-2 sm:space-y-3">
                     <div className='flex flex-col w-full'>
                         <label htmlFor="" className='text-sm sm:text-xs pb-1'>LinkedIn</label>
                         <input
@@ -76,11 +76,11 @@ export const BioForm = ({ bioForm, setBioForm }) => {
                         />
                     </div>
                 </div>
-                <div className="flex lg:flex-row sm:flex-col lg:space-x-2">
+                <div className="flex lg:flex-row sm:flex-col lg:space-x-2 sm:space-y-3">
                     <div className='flex flex-col w-full'>
                         <label htmlFor="" className='text-sm sm:text-xs pb-1'>Country</label>
                         <select
-                            className='border p-1 text-sm sm:text-xs border-[#D9D9D9] rounded-md'
+                            className='border p-1 text-sm border-[#D9D9D9] rounded-md'
                             value={bioForm.country}
                             onChange={(e) => setBioForm({ ...bioForm, country: e.target.value })}
                         >
@@ -89,9 +89,9 @@ export const BioForm = ({ bioForm, setBioForm }) => {
                         </select>
                     </div>
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="" className='text-sm sm:text-xs pb-1'>City</label>
+                        <label htmlFor="" className='text-sm pb-1'>City</label>
                         <select
-                            className='border p-1 text-sm sm:text-xs border-[#D9D9D9] rounded-md'
+                            className='border p-1 text-sm border-[#D9D9D9] rounded-md'
                             value={bioForm.city}
                             onChange={(e) => setBioForm({ ...bioForm, city: e.target.value })}
                         >
@@ -119,10 +119,10 @@ export const CompanyForm = ({ companyForm, setCompanyForm }) => {
     return (
         <div className='my-5'>
             <div className='pb-5'>
-                <h1 className='text-lg font-bold pb-1 sm:text-sm'>Company Information</h1>
-                <p className='text-sm font-medium sm:text-xs'>Complete your sign up process and get started with a 1 month free trial</p>
+                <h1 className='text-lg font-bold pb-1'>Company Information</h1>
+                <p className='text-sm font-medium sm:text-sm'>Complete your sign up process and get started with a 1 month free trial</p>
             </div>
-            <div className='flex flex-col space-y-3 text-sm sm:text-xs'>
+            <div className='flex flex-col space-y-3 text-sm'>
                 <div className='flex flex-col w-full'>
                     <label htmlFor="" className='text-sm pb-1'>Company Name</label>
                     <input
@@ -132,7 +132,7 @@ export const CompanyForm = ({ companyForm, setCompanyForm }) => {
                         onChange={(e) => setCompanyForm({ ...companyForm, name: e.target.value })}
                     />
                 </div>
-                <div className="flex lg:flex-row lg:space-x-2 sm:flex-col">
+                <div className="flex lg:flex-row lg:space-x-2 sm:space-y-3 sm:flex-col">
                     <div className='flex flex-col w-full'>
                         <label htmlFor="" className='text-sm pb-1'>Country</label>
                         <select
@@ -174,7 +174,7 @@ export const CompanyForm = ({ companyForm, setCompanyForm }) => {
                         onChange={(e) => setCompanyForm({ ...companyForm, website: e.target.value })}
                     />
                 </div>
-                <div className="flex lg:flex-row lg:space-x-2 sm:flex-col">
+                <div className="flex lg:flex-row lg:space-x-2 sm:space-y-5 sm:flex-col">
                     <div className='flex flex-col w-full'>
                         <label htmlFor="" className='text-sm pb-1'>Founding Year</label>
                         <input

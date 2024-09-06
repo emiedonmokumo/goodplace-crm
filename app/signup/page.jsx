@@ -2,9 +2,10 @@
 import { SignupNav, SignupNavMobile } from '@/components/SignupNav';
 import { BioForm, CompanyForm, TeamForm, Logins, EmailVerification } from '@/components/SignupForm';
 import React, { useState } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Page = () => {
+  const router = useRouter()
   const [currentStep, setCurrentStep] = useState(1);
   const [bioForm, setBioForm] = useState({
     firstName: '',
@@ -63,10 +64,22 @@ const Page = () => {
   const [code, setCode] = useState(['', '', '', '', '']);
 
   // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     if (currentStep <= 4) {
       e.preventDefault();
-      console.log(bioForm, companyForm)
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
+
+      if (response.ok) {
+        console.log(await response.json())
+        router.push('/')
+      }
+
       setCurrentStep(5)
     }
   };
@@ -109,8 +122,8 @@ const Page = () => {
     <div className="flex">
       <SignupNav currentStep={currentStep} setCurrentStep={setCurrentStep} />
       <SignupNavMobile currentStep={currentStep} setCurrentStep={setCurrentStep} />
-      <div className={`${currentStep == 6 && 'hidden'} flex-1 flex items-center justify-center lg:ml-64 sm:ml-12 p-4 min-h-screen`}>
-        <form className="w-full max-w-md" onSubmit={handleSubmit}>
+      <div className={`${currentStep == 6 && 'hidden'} sm:mt-14 lg:flex-1 flex items-center justify-center lg:ml-64 p-4 min-h-screen`}>
+        <form className="lg:w-full lg:max-w-md" onSubmit={handleSubmit}>
           {renderStep()}
 
           <div className="flex justify-between mt-4">

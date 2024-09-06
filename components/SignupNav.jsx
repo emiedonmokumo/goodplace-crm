@@ -105,55 +105,54 @@ export const SignupNavMobile = ({ currentStep, setCurrentStep }) => {
     };
 
     return (
-        <div className="lg:hidden fixed left-0 top-0 bottom-0 flex flex-col items-center z-10 py-6 mx-2 pr-3 space-y-8">
-
+        <div className="lg:hidden fixed top-2 left-0 right-0 flex justify-center z-10 py-2 px-4 bg-white space-x-4">
             {/* Step icons */}
             <button
                 onClick={() => handleStepChange(1)}
-                className={`relative flex flex-col items-center p-2 rounded-full ${currentStep === 1 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
+                className={`relative flex flex-col items-center p-2 rounded-full transition-all duration-300 ${currentStep === 1 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
             >
                 <FaUser className="text-[14px]" />
-                {currentStep === 1 && <div className="w-2 h-2 bg-[#00454F] rounded-full absolute -right-3"></div>}
+                {currentStep === 1 && <div className="absolute -bottom-1 w-2 h-2 bg-[#00454F] rounded-full"></div>}
             </button>
 
             <button
                 onClick={() => handleStepChange(2)}
-                className={`relative flex flex-col items-center p-2 rounded-full ${currentStep === 2 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
+                className={`relative flex flex-col items-center p-2 rounded-full transition-all duration-300 ${currentStep === 2 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
             >
                 <FaBuilding className="text-[14px]" />
-                {currentStep === 2 && <div className="w-2 h-2 bg-[#00454F] rounded-full absolute -right-3"></div>}
+                {currentStep === 2 && <div className="absolute -bottom-1 w-2 h-2 bg-[#00454F] rounded-full"></div>}
             </button>
 
             <button
                 onClick={() => handleStepChange(3)}
-                className={`relative flex flex-col items-center p-2 rounded-full ${currentStep === 3 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
+                className={`relative flex flex-col items-center p-2 rounded-full transition-all duration-300 ${currentStep === 3 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
             >
                 <FaUsers className="text-[14px]" />
-                {currentStep === 3 && <div className="w-2 h-2 bg-[#00454F] rounded-full absolute -right-3"></div>}
+                {currentStep === 3 && <div className="absolute -bottom-1 w-2 h-2 bg-[#00454F] rounded-full"></div>}
             </button>
 
             <button
                 onClick={() => handleStepChange(4)}
-                className={`relative flex flex-col items-center p-2 rounded-full ${currentStep === 4 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
+                className={`relative flex flex-col items-center p-2 rounded-full transition-all duration-300 ${currentStep === 4 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
             >
                 <FaKey className="text-[14px]" />
-                {currentStep === 4 && <div className="w-2 h-2 bg-[#00454F] rounded-full absolute -right-3"></div>}
+                {currentStep === 4 && <div className="absolute -bottom-1 w-2 h-2 bg-[#00454F] rounded-full"></div>}
             </button>
 
             <button
                 onClick={() => handleStepChange(5)}
-                className={`relative flex flex-col items-center p-2 rounded-full ${currentStep === 5 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
+                className={`relative flex flex-col items-center p-2 rounded-full transition-all duration-300 ${currentStep === 5 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
             >
                 <FaEnvelope className="text-[14px]" />
-                {currentStep === 5 && <div className="w-2 h-2 bg-[#00454F] rounded-full absolute -right-3"></div>}
+                {currentStep === 5 && <div className="absolute -bottom-1 w-2 h-2 bg-[#00454F] rounded-full"></div>}
             </button>
 
             <button
                 onClick={() => handleStepChange(6)}
-                className={`relative flex flex-col items-center p-2 rounded-full ${currentStep === 6 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
+                className={`relative flex flex-col items-center p-2 rounded-full transition-all duration-300 ${currentStep === 6 ? 'bg-[#00454F] text-white' : 'bg-gray-100 text-gray-500'}`}
             >
                 <FaCreditCard className="text-[14px]" />
-                {currentStep === 6 && <div className="w-2 h-2 bg-[#00454F] rounded-full absolute -right-3"></div>}
+                {currentStep === 6 && <div className="absolute -bottom-1 w-2 h-2 bg-[#00454F] rounded-full"></div>}
             </button>
         </div>
     );
