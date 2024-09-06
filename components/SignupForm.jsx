@@ -124,19 +124,19 @@ export const CompanyForm = ({ companyForm, setCompanyForm }) => {
             </div>
             <div className='flex flex-col space-y-3 text-sm sm:text-xs'>
                 <div className='flex flex-col w-full'>
-                    <label htmlFor="" className='text-sm sm:text-xs pb-1'>Company Name</label>
+                    <label htmlFor="" className='text-sm pb-1'>Company Name</label>
                     <input
                         type="text"
-                        className='border p-1 border-[#D9D9D9] sm:text-xs rounded-md'
+                        className='border p-1 border-[#D9D9D9] rounded-md'
                         value={companyForm.name}
                         onChange={(e) => setCompanyForm({ ...companyForm, name: e.target.value })}
                     />
                 </div>
                 <div className="flex lg:flex-row lg:space-x-2 sm:flex-col">
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="" className='text-sm pb-1 sm:text-xs'>Country</label>
+                        <label htmlFor="" className='text-sm pb-1'>Country</label>
                         <select
-                            className='border p-1 border-[#D9D9D9] sm:text-xs rounded-md text-sm'
+                            className='border p-1 border-[#D9D9D9] rounded-md text-sm'
                             value={companyForm.country}
                             onChange={(e) => setCompanyForm({ ...companyForm, country: e.target.value })}
                         >
@@ -145,9 +145,9 @@ export const CompanyForm = ({ companyForm, setCompanyForm }) => {
                         </select>
                     </div>
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="" className='text-sm pb-1 sm:text-xs'>City</label>
+                        <label htmlFor="" className='text-sm pb-1'>City</label>
                         <select
-                            className='border p-1 border-[#D9D9D9] sm:text-xs rounded-md text-sm'
+                            className='border p-1 border-[#D9D9D9] rounded-md text-sm'
                             value={companyForm.city}
                             onChange={(e) => setCompanyForm({ ...companyForm, city: e.target.value })}
                         >
@@ -157,38 +157,38 @@ export const CompanyForm = ({ companyForm, setCompanyForm }) => {
                     </div>
                 </div>
                 <div className='flex flex-col w-full'>
-                    <label htmlFor="" className='text-sm pb-1 sm:text-xs'>Email</label>
+                    <label htmlFor="" className='text-sm pb-1'>Email</label>
                     <input
                         type="email"
-                        className='border p-1 border-[#D9D9D9] sm:text-xs rounded-md'
+                        className='border p-1 border-[#D9D9D9] rounded-md'
                         value={companyForm.email}
                         onChange={(e) => setCompanyForm({ ...companyForm, email: e.target.value })}
                     />
                 </div>
                 <div className='flex flex-col w-full'>
-                    <label htmlFor="" className='text-sm pb-1 sm:text-xs'>Website</label>
+                    <label htmlFor="" className='text-sm pb-1'>Website</label>
                     <input
                         type="text"
-                        className='border p-1 border-[#D9D9D9] sm:text-xs rounded-md'
+                        className='border p-1 border-[#D9D9D9] rounded-md'
                         value={companyForm.website}
                         onChange={(e) => setCompanyForm({ ...companyForm, website: e.target.value })}
                     />
                 </div>
                 <div className="flex lg:flex-row lg:space-x-2 sm:flex-col">
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="" className='text-sm pb-1 sm:text-xs'>Founding Year</label>
+                        <label htmlFor="" className='text-sm pb-1'>Founding Year</label>
                         <input
                             type="number"
-                            className='border p-1 border-[#D9D9D9] sm:text-xs rounded-md'
+                            className='border p-1 border-[#D9D9D9] rounded-md'
                             value={companyForm.foundingYear}
                             onChange={(e) => setCompanyForm({ ...companyForm, foundingYear: e.target.value })}
                         />
                     </div>
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="" className='text-sm pb-1 sm:text-xs'>Revenue (LTM, $K)</label>
+                        <label htmlFor="" className='text-sm pb-1'>Revenue (LTM, $K)</label>
                         <input
                             type="number"
-                            className='border p-1 border-[#D9D9D9] sm:text-xs rounded-md'
+                            className='border p-1 border-[#D9D9D9] rounded-md'
                             value={companyForm.revenue.ltm}
                             onChange={(e) => setCompanyForm({ ...companyForm, revenue: { ...companyForm.revenue, ltm: e.target.value } })}
                         />
@@ -196,19 +196,19 @@ export const CompanyForm = ({ companyForm, setCompanyForm }) => {
                 </div>
                 <div className="flex lg:flex-row sm:flex-col lg:space-x-2">
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="" className='text-sm pb-1 sm:text-xs'>Revenue (Previous year, $K)</label>
+                        <label htmlFor="" className='text-sm pb-1'>Revenue (Previous year, $K)</label>
                         <input
                             type="number"
-                            className='border p-1 border-[#D9D9D9] sm:text-xs rounded-md'
+                            className='border p-1 border-[#D9D9D9] rounded-md'
                             value={companyForm.revenue.previousYear}
                             onChange={(e) => setCompanyForm({ ...companyForm, revenue: { ...companyForm.revenue, previousYear: e.target.value } })}
                         />
                     </div>
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="" className='text-sm pb-1 sm:text-xs'>Gross profit(LTM, $K)</label>
+                        <label htmlFor="" className='text-sm pb-1'>Gross profit(LTM, $K)</label>
                         <input
                             type="number"
-                            className='border p-1 border-[#D9D9D9] sm:text-xs rounded-md'
+                            className='border p-1 border-[#D9D9D9] rounded-md'
                             value={companyForm.grossProfit.ltm}
                             onChange={(e) => setCompanyForm({ ...companyForm, grossProfit: { ...companyForm.grossProfit, ltm: e.target.value } })}
                         />
@@ -216,19 +216,19 @@ export const CompanyForm = ({ companyForm, setCompanyForm }) => {
                 </div>
                 <div className="flex lg:flex-row sm:flex-col lg:space-x-2">
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="" className='text-sm pb-1 sm:text-xs'>Gross profit (Previous year, $K)</label>
+                        <label htmlFor="" className='text-sm pb-1'>Gross profit (Previous year, $K)</label>
                         <input
                             type="number"
-                            className='border p-1 border-[#D9D9D9] sm:text-xs rounded-md'
+                            className='border p-1 border-[#D9D9D9] rounded-md'
                             value={companyForm.grossProfit.previousYear}
                             onChange={(e) => setCompanyForm({ ...companyForm, grossProfit: { ...companyForm.grossProfit, previousYear: e.target.value } })}
                         />
                     </div>
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="" className='text-sm pb-1 sm:text-xs'>EBITDA</label>
+                        <label htmlFor="" className='text-sm pb-1'>EBITDA</label>
                         <input
                             type="number"
-                            className='border p-1 border-[#D9D9D9] sm:text-xs rounded-md'
+                            className='border p-1 border-[#D9D9D9] rounded-md'
                             value={companyForm.EBITDA.ltm}
                             onChange={(e) => setCompanyForm({ ...companyForm, EBITDA: { ...companyForm.EBITDA, ltm: e.target.value } })}
                         />
