@@ -72,7 +72,7 @@ const Page = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify({ bio: bioForm, company: companyForm, team: teamForm, credentials: loginCredentials })
       })
 
       if (response.ok) {
