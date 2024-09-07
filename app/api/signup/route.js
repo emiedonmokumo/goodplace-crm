@@ -2,9 +2,6 @@ import connectDB from "@/config/db";
 import User from "@/models/User";
 import { NextResponse } from "next/server";
 import transporter from "@/utils/transporter"; // Adjust the path if needed
-import dotenv from "dotenv";
-
-dotenv.config();
 
 export async function POST(req) {
   try {
@@ -12,20 +9,19 @@ export async function POST(req) {
 
     await connectDB();
 
-    // Create a new user
+    // Generate a verification code
+    const verificationCode = Math.floor(10000 + Math.random() * 90000);
+
+    // Add the verification code to credentials before creating the user
+    credentials.verificationCode = verificationCode;
+
+    // Create a new user with the verification code included
     const newUser = await User.create({
       bio,
       company,
       team,
       credentials,
     });
-
-    // Generate a verification code
-    const verificationCode = Math.floor(1000 + Math.random() * 9000);
-
-    // Update the user with the verification code
-    newUser.credentials.verificationCode = verificationCode;
-    await newUser.save();
 
     // Email options for verification code
     const mailOptions = {
@@ -44,6 +40,8 @@ export async function POST(req) {
           { status: 500 }
         );
       }
+
+      console.log(info);
     });
 
     return NextResponse.json(
@@ -52,9 +50,6 @@ export async function POST(req) {
     );
   } catch (error) {
     console.error("Error:", error);
-    return NextResponse.json(
-      { message: "Something went wrong", error: error.message },
-      { status: 500 }
-    );
+    return NextResponse.json({ message: error.message }, { status: 500 });
   }
 }

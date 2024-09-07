@@ -19,7 +19,7 @@ export const SignupNav = ({ currentStep, setCurrentStep }) => {
                         <button
                             className={`flex items-center space-x-2 w-full text-left ${currentStep === 1 ? 'font-bold text-[#00454F]' : ''}`}
                             onClick={() => handleStepChange(1)}
-                            disabled={currentStep => 5 && true}
+                            // disabled={currentStep => 5 && true}
                         >
                             <FaUser className='text-[18px]' />
                             <div className='flex-1'>
@@ -32,7 +32,7 @@ export const SignupNav = ({ currentStep, setCurrentStep }) => {
                         <button
                             className={`flex items-center space-x-2 w-full text-left ${currentStep === 2 ? 'font-bold text-[#00454F]' : ''}`}
                             onClick={() => handleStepChange(2)}
-                            disabled={currentStep => 5 && true}
+                            // disabled={currentStep => 5 && true}
                         >
                             <FaBuilding className='text-[18px]' />
                             <div className='flex-1'>
@@ -58,7 +58,7 @@ export const SignupNav = ({ currentStep, setCurrentStep }) => {
                         <button
                             className={`flex items-center space-x-2 w-full text-left ${currentStep === 4 ? 'font-bold text-[#00454F]' : ''}`}
                             onClick={() => handleStepChange(4)}
-                            disabled={currentStep => 5 && true}
+                            // disabled={currentStep => 5 && true}
                         >
                             <FaKey className='text-[18px]' />
                             <div className='flex-1'>
@@ -67,23 +67,24 @@ export const SignupNav = ({ currentStep, setCurrentStep }) => {
                             </div>
                         </button>
                     </li>
-                    <li className={currentStep === 5 ? 'font-bold' : ''}>
-                        <div className={`flex items-center space-x-2 ${currentStep === 4 ? 'text-[#00454F]' : ''}`}>
+                    <li>
+                        <button className={`flex items-center space-x-2 text-left ${currentStep === 5 ? 'text-[#00454F] font-bold' : ''}`} onClick={() => handleStepChange(5)}
+                            >
                             <FaEnvelope className='text-[18px]' />
-                            <div className=''>
+                            <div className='flex-1'>
                                 <h2>5 of 6</h2>
                                 <h3>Email Verification</h3>
                             </div>
-                        </div>
+                        </button>
                     </li>
-                    <li className={currentStep === 6 ? 'font-bold' : ''}>
-                        <div className={`flex items-center space-x-2 ${currentStep === 6 ? 'text-[#00454F]' : ''}`}>
+                    <li>
+                        <button className={`flex items-center space-x-2 text-left ${currentStep === 6 ? 'text-[#00454F] font-bold' : ''}`}>
                             <FaCreditCard className='text-[18px]' />
-                            <div className=''>
+                            <div className='flex-1'>
                                 <h2>6 of 6</h2>
                                 <h3>Subscription Plan</h3>
                             </div>
-                        </div>
+                        </button>
                     </li>
                 </ul>
             </div>

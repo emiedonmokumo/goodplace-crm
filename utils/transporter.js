@@ -1,12 +1,9 @@
-import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
-
-dotenv.config();
+import { createTransport } from 'nodemailer';
 
 const ADMIN_MAIL = process.env.ADMIN_MAIL;
 
 // Create a transporter using Gmail
-const transporter = nodemailer.createTransport({
+const transporter = createTransport({
   host: process.env.MAIL_HOST,
   port: 465,
   secure: true,
@@ -31,5 +28,6 @@ const verifyTransporter = async () => {
 };
 
 verifyTransporter();
+
 
 export default transporter;

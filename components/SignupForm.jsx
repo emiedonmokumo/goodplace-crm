@@ -174,6 +174,15 @@ export const CompanyForm = ({ companyForm, setCompanyForm }) => {
                         onChange={(e) => setCompanyForm({ ...companyForm, website: e.target.value })}
                     />
                 </div>
+                <div className='flex flex-col w-full'>
+                    <label htmlFor="" className='text-sm pb-1'>Industry</label>
+                    <input
+                        type="text"
+                        className='border p-1 border-[#D9D9D9] rounded-md'
+                        value={companyForm.industry}
+                        onChange={(e) => setCompanyForm({ ...companyForm, industry: e.target.value })}
+                    />
+                </div>
                 <div className="flex lg:flex-row lg:space-x-2 sm:space-y-5 sm:flex-col">
                     <div className='flex flex-col w-full'>
                         <label htmlFor="" className='text-sm pb-1'>Founding Year</label>
@@ -233,6 +242,15 @@ export const CompanyForm = ({ companyForm, setCompanyForm }) => {
                             onChange={(e) => setCompanyForm({ ...companyForm, EBITDA: { ...companyForm.EBITDA, ltm: e.target.value } })}
                         />
                     </div>
+                </div>
+                <div className='flex flex-col w-full'>
+                    <label htmlFor="" className='text-sm pb-1'>EBITDA (Previous year, $K)</label>
+                    <input
+                        type="number"
+                        className='border p-1 border-[#D9D9D9] rounded-md'
+                        value={companyForm.EBITDA.previousYear}
+                        onChange={(e) => setCompanyForm({ ...companyForm, EBITDA: { ...companyForm.EBITDA, previousYear: e.target.value } })}
+                    />
                 </div>
             </div>
         </div>
@@ -395,6 +413,56 @@ export const EmailVerification = ({ code, setCode, handleVerification }) => {
                     value="Complete"
                     onClick={handleVerification}
                     className="w-full py-2 bg-[#03AAC1] hover:bg-[#0691A5] text-white rounded cursor-pointer sm:text-sm">Complete</button>
+            </div>
+        </div>
+    );
+};
+
+// Subscription Plan
+export const SubscriptionPlan = ({ handleSubscription }) => {
+    return (
+        <div className="w-full flex flex-col items-center justify-center ">
+            <h2 className="text-2xl font-bold mb-3">Subscription plan</h2>
+            <p className="text-gray-500 mb-8 text-sm">
+                Select your plan to be able to use GoodPlace CRM
+            </p>
+            <div className="flex space-x-5">
+                {/* Free Plan */}
+                <div className="w-64 px-8 pt-5 pb-2 border rounded-lg">
+                    <h3 className="text-sm font-medium p-1 rounded-md text-center text-[#003941] mb-2 bg-[#DCF8FC]">Free Plan</h3>
+                    <p className="text-3xl font-bold mt-3 mb-8">$0</p>
+                    <p className="text-gray-500">Unlimited</p>
+                    <div className="mt-6 my-10">
+                        <h4 className="font-semibold text-cyan-600 pb-2">Perks</h4>
+                        <ul className="text-gray-600 list-none space-y-2 text-sm">
+                            <li>5 investors</li>
+                            <li>Unlimited pipelines</li>
+                            <li>Unlimited users</li>
+                        </ul>
+                    </div>
+                    <button onClick={() => handleSubscription(0, 'Free')} className="mt-6 w-full py-2 text-white bg-cyan-600 rounded-md hover:bg-cyan-700 text-sm">
+                        Choose
+                    </button>
+                </div>
+
+                {/* Platinum Plan */}
+                <div className="w-64 px-8 pt-5 pb-2 border rounded-lg">
+                    <h3 className="text-sm p-1 rounded-md text-center text-white bg-[#834CFF] mb-2">Platinum</h3>
+                    <p className="text-3xl font-bold mt-3 mb-8">$150</p>
+                    <p className="text-gray-500">Billed annually</p>
+                    <div className="mt-6 my-10">
+                        <h4 className="font-semibold text-[#03AAC1] pb-2">Perks</h4>
+                        <ul className="text-gray-600 list-none space-y-2 text-sm">
+                            <li>25 investors</li>
+                            <li>Unlimited pipelines</li>
+                            <li>Unlimited users</li>
+                            <li>Matching with Investors</li>
+                        </ul>
+                    </div>
+                    <button onClick={() => handleSubscription(150, 'Platinum')} className="mb-2 w-full py-2 text-white bg-cyan-600 rounded-md hover:bg-cyan-700 text-sm" disabled={true}>
+                        Choose
+                    </button>
+                </div>
             </div>
         </div>
     );
