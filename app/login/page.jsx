@@ -1,18 +1,17 @@
-'use client'
-import LoginForm from '@/components/LoginForm'
-import { useRouter, useSearchParams } from 'next/navigation'
-import { useState, useEffect, Suspense } from 'react'
+'use client';
+import { Suspense } from 'react';
+import LoginForm from '@/components/LoginForm';
+import { useSearchParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { signIn } from 'next-auth/react';
 
-
-const page = () => {
+const PageContent = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const router = useRouter();
-    const searchParams = useSearchParams()
-    const isSignup = searchParams.get('signup')
+    const searchParams = useSearchParams();
+    const isSignup = searchParams.get('signup');
 
     useEffect(() => {
         if (isSignup) {
@@ -30,12 +29,21 @@ const page = () => {
             callbackUrl: '/dashboard'
         });
     };
+
     return (
-        <Suspense fallback={<h1 className='text-xl font-bold'>Loading...</h1>}>
+        <>
             <ToastContainer />
             <LoginForm email={email} password={password} setPassword={setPassword} setEmail={setEmail} handleSubmit={handleSubmit} />
-        </Suspense>
-    )
-}
+        </>
+    );
+};
 
-export default page
+const Page = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <PageContent />
+        </Suspense>
+    );
+};
+
+export default Page;
