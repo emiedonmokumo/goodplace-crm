@@ -1,7 +1,7 @@
 'use client'
 import LoginForm from '@/components/LoginForm'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { signIn } from 'next-auth/react';
@@ -31,10 +31,10 @@ const page = () => {
         });
     };
     return (
-        <>
+        <Suspense fallback={<h1 className='text-xl font-bold'>Loading...</h1>}>
             <ToastContainer />
             <LoginForm email={email} password={password} setPassword={setPassword} setEmail={setEmail} handleSubmit={handleSubmit} />
-        </>
+        </Suspense>
     )
 }
 
