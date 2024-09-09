@@ -75,7 +75,7 @@ const Page = () => {
     e.preventDefault();
     if (currentStep == 4) {
       // check if password match
-      if(credentials.password !== credentials.password2) {
+      if(loginCredentials.password !== loginCredentials.password2) {
         toast.warn('Passwords do not match')
         return
       }
