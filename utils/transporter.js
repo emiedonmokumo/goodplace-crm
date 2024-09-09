@@ -11,9 +11,9 @@ const transporter = createTransport({
     user: ADMIN_MAIL,
     pass: process.env.MAIL_PASS,
   },
-  tls: {
-    rejectUnauthorized: false,
-  },
+  // tls: {
+  //   rejectUnauthorized: false,
+  // },
   debug: true,
 });
 
